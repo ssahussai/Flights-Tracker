@@ -15,7 +15,7 @@ function create(req, res) {
     flight.save(function(err) {
         if (err) return res.render('flights/new');
         console.log(flight);
-        res.redirect('/flights/new');
+        res.redirect('/flights');
     });
 }
 
