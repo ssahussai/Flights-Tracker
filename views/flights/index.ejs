@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongoose Flights</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+<body>
+    <h2>Flights List</h2>
+    <table>
+        <thead>
+            <th>Airline</th>
+            <th>Flight Number</th>
+            <th>Departs</th>
+        </thead>
+        <% flights.forEach(function(flight) { %>
+            <tr>
+                <td><%= flight.airline %></td>
+                <td><%= flight.flightNo %></td>
+                <td><%= flight.departs %></td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
