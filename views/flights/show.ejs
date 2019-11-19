@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongoose Flights</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+<body>
+    <h1>Flight Details</h1>
+    <section>
+        <div>Airline: </div>
+        <div><%= flight.airline%></div>
+        <div>Flight Number: </div>
+        <div><%= flight.flightNo%></div>
+        <div>Departs: </div>
+        <div><%= flight.departs%></div>
+    </section>
+
+    <br><br><h2>Add A Destination</h2>
+    <form method="POST" action="/flights/<%= flight._id %>/destinations">
+        <label>Destination: </label>
+        <select name="airport">
+            <option value="AUS">AUS</option>
+            <option value="DAL">DAL</option>
+            <option value="LAX">LAX</option>
+            <option value="SAN">SAN</option>
+            <option value="SEA">SEA</option>
+        </select><br>
+        <label>Arrival: </label>
+        <input type="datetime-local" name="arrival"><br>
+        <input type="submit" value="Add Destination">
+    </form>
+
+    <% if (flight.destinations.length) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Destination</th>
+              <th>Arrival</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% flight.destinations.forEach(function(r) { %>
+              <tr>
+                <td><%= r.createdAt.toLocaleDateString() %></td>
+                <td><%= r.airport %></td>
+                <td><%= r.arrival %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <h5>No Destination Has Been Added Yet!</h5>
+      <% } %>
+</body>
+</html>

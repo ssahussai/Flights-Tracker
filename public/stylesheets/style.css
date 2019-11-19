@@ -1,8 +1,24 @@
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 17px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: beige; 
 }
 
 a {
   color: #00B7FF;
 }
+/* 
+#new-form {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 22rem));
+ 
+}
+
+#new-form * {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+} */
+
