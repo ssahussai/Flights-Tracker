@@ -19,8 +19,8 @@
         <div><%= flight.departs%></div>
     </section>
 
-    <br><br><h2>Add A Destination</h2>
-    <form method="POST" action="/flights/<%= flight._id %>/destinations">
+    <br><br><h2>Add Destination</h2>
+    <form iid="add-destination-form" method="POST" action="/flights/<%= flight._id %>/destinations">
         <label>Destination: </label>
         <select name="airport">
             <option value="AUS">AUS</option>

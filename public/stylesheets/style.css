@@ -3,22 +3,13 @@ body {
   padding: 50px;
   font: 17px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: beige; 
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 a {
   color: #00B7FF;
 }
-/* 
-#new-form {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 22rem));
  
-}
-
-#new-form * {
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 5px;
-} */
-
