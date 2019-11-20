@@ -35,7 +35,7 @@
               <tr>
                 <td><%= r.createdAt.toLocaleDateString() %></td>
                 <td><%= r.airport %></td>
-                <td><%= r.arrival %></td>
+                <td><%= new Date(r.arrival).toLocaleDateString() %></td>
               </tr>
             <% }); %>
           </tbody>
@@ -49,7 +49,7 @@
         <label>Seat Number: </label>
         <input name="seat" required pattern="[A-F][1-9]\d?"><br>
         <label>Price: </label>
-        <input type="number" min="0"><br>
+        <input name="price" type="number" min="0"><br>
         <input type="submit" value="Add Ticket">
     </form>
     

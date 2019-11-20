@@ -17,20 +17,20 @@ function create(req, res) {
     var flight = new Flight(req.body);
     flight.save(function(err) {
         if (err) return res.render('flights/new');
-        console.log(flight);
         res.redirect('/flights');
     });
 }
 
 function index(req, res) {
-    Flight.find({}, function(err, flights) {
+    Flight.find({}).lean().exec(function(err, flights) {
+        flights.forEach(f => f.departs = f.departs.toLocaleDateString());
         res.render('flights/index', {flights});
     });
 }
 
-
 function show(req, res) {
-    Flight.findById(req.params.id, function(err, flight) {
+    Flight.findById(req.params.id).lean().exec(function(err, flight) {
+        flight.departs = flight.departs.toLocaleDateString();
         Ticket.find({flight: flight._id}, function(err, tickets) {
             res.render('flights/show', {title: 'Flight Detail', tickets, flight});
         });
@@ -38,7 +38,7 @@ function show(req, res) {
 }
 
 function newTicket(req, res) {
-    Ticket.create(req.body, function(err, ticket) {
+    Ticket.create({...req.body, flight: req.params.id }, function(err, ticket) {
         res.redirect(`/flights/${req.params.id}`);
     });
  }
