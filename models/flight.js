@@ -39,5 +39,4 @@ var flightSchema = new Schema({
     timestamps: true
 });
 
-//compile schema into a model and export it 
 module.exports = mongoose.model('Flight', flightSchema);

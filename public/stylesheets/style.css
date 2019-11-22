@@ -52,7 +52,6 @@ nav > a:hover {
   grid-gap: 10px;
   grid-template-columns: repeat(2, minmax(auto, 22rem));
   font-size: 17px;
-  padding-top: 40px;
   margin-left: 400px;
 }
 
@@ -79,10 +78,10 @@ table td {
 h2 {
   padding-bottom: 30px;
 }
-/* #new-form *,
-  #add-review-form *,
-  #add-performer-form * {
-    font-size: 20px;
-    padding: 5px;
-    border-radius: 5px;
-  } */
+
+nav > img {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
